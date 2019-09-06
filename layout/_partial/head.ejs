@@ -23,7 +23,7 @@
   <% } %>
   <%- partial('gen-structured-data') %>
   <% if (is_post() && config.generator_amp){ %>
-    <link rel="amphtml" href="<%= config.url %><%= config.root %><%= page.path.replace(".html", "") %>/amp/index.html">
+    <link rel="amphtml" href="<%= config.url %><%= config.root %><%= page.path.replace(/(\.html|\/)$/, "") %>/amp/">
   <% } %>
   <% if (config.simple_japanese.custom_assets.js) { %>
     <%- js(config.simple_japanese.custom_assets.js) %>
