@@ -5,9 +5,9 @@
   <span>
     <%- partial('date', { datetime: post.date }) %>
   </span>
-  <% if (post.updated) { %>
+  <% if (post.edit) { %>
     / <span>
-      <%- partial('date', { datetime: post.updated }) %>
+      <%- partial('date', { datetime: post.edit }) %>
     <span>更新
   <% } %>
   <h1 class="title"><%=post.title %></h1>
