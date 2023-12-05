@@ -7,12 +7,16 @@
     <div class="media-content">
       <p>
         <strong>
-          <span><%=config.author %></span>
-          <span class="icon">
-            <a href="<%- url_for(config.contact.url) %>" target="_blank">
-              <i class="fa fa-<%=config.contact.icon %>"></i>
-            </a>
-          </span>
+          <div><%=config.author %></div>
+          <div>
+            <% for (var contact of config.contact) { %>
+              <span class="icon">
+                <a href="<%- url_for(contact.url) %>" target="_blank">
+                  <i class="fa fa-<%=contact.icon %>"></i>
+                </a>
+              </span>
+            <% } %>
+          </div>
         </strong>
         <br>
         <span><%= config.author_title %></span>
