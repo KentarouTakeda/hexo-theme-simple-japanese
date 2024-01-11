@@ -28,4 +28,7 @@
   <% if (config.simple_japanese.custom_assets.js) { %>
     <%- js(config.simple_japanese.custom_assets.js) %>
   <% } %>
+  <% for (var contact of config.contact) { %>
+    <link rel="author" href="<%- url_for(contact.url) %>" />
+  <% } %>
 </head>
