@@ -9,9 +9,9 @@
         <strong>
           <div><%=config.author %></div>
           <div>
-            <% for (var contact of config.contact) { %>
+            <% for (var contact of config.contact.filter(v => v.show)) { %>
               <span class="icon">
-                <a href="<%- url_for(contact.url) %>" target="_blank">
+                <a href="<%- url_for(contact.url) %>" rel="author" target="_blank">
                   <i class="fa fa-<%=contact.icon %>"></i>
                 </a>
               </span>
