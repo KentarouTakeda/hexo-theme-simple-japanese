@@ -3,7 +3,7 @@
 
   const mainEntityOfPage = {
     "@type": "WebPage",
-    "@id": url
+    "@id": url.replace(/\/index.html$/, '/')
   };
 
   const author = {
@@ -42,7 +42,7 @@
       return {
         "@type":"ListItem",
         "position": index + 1,
-        "url": url_for(post.path)
+        "url": url_for(post.path).replace(/\/index.html$/, '/')
       };
     });
 
