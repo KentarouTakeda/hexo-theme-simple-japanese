@@ -6,8 +6,9 @@
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
   <meta name="viewport" content="width=device-width">
   <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin>
+  <link rel="canonical" href="<%- page.permalink -%>">
   <%- open_graph({
-    url: url.replace(/\/index.html$/, '/'),
+    url: page.permalink,
     image: page.ogimage,
     twitter_id: config.twitter,
     twitter_image: page.twitter_image ?? page.ogimage,
