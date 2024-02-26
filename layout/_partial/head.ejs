@@ -13,7 +13,6 @@
     image: page.ogimage,
     twitter_id: config.twitter,
     twitter_image: page.twitter_image ?? page.ogimage,
-    google_plus: config.google_plus,
     fb_admins: config.fb_admins,
     fb_app_id: config.fb_app_id
   }) %>
@@ -26,9 +25,6 @@
     <%- css(`${config.simple_japanese.custom_assets.css}?${Date.now()}`) %>
   <% } %>
   <%- partial('gen-structured-data') %>
-  <% if (is_post() && config.generator_amp){ %>
-    <link rel="amphtml" href="<%= config.url %><%= config.root %><%= page.path.replace(/(\.html|\/)$/, "") %>/amp/">
-  <% } %>
   <% if (config.simple_japanese.custom_assets.js) { %>
     <%- js(`${config.simple_japanese.custom_assets.js}?${Date.now()}`) %>
   <% } %>
