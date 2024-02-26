@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width">
   <meta name="robots" content="max-image-preview:large" />
   <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin>
-  <link rel="canonical" href="<%- page.permalink -%>">
+  <link rel="canonical" href="<%- page.permalink ?? url.replace(/\/index.html$/, '/') -%>">
   <%- open_graph({
-    url: page.permalink,
+    url: page.permalink ?? (url.replace(/\/index.html$/, '/')) ,
     image: page.ogimage,
     twitter_id: config.twitter,
     twitter_image: page.twitter_image ?? page.ogimage,
